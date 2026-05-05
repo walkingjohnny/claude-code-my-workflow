@@ -53,3 +53,14 @@ Thumbs.db
 # Output artifacts — uncomment lines below based on your preference
 # *.rds
 # output/**/*.rds
+
+# 原始数据（只读，绝不入版本库）
+源数据/
+
+# LLM 检查点（中间产物，体积大）
+data/v2_checkpoints/
+
+# 大体积的中间数据（可由脚本重新生成；> 50MB 超过 GitHub 限额）
+scripts/job_classified_data.csv
+data/v3_supply_majors_raw.parquet
+data/v4_supply_majors_raw.parquet

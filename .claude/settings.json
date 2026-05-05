@@ -42,7 +42,11 @@
       "Bash(for *)",
       "Bash(gs *)",
       "Bash(pdftk *)",
-      "Bash(mkdir *)"
+      "Bash(mkdir *)",
+      "Bash(python3 -c *)",
+      "Bash(pip list*)",
+      "Bash(pip show *)",
+      "Bash(jupyter *)"
     ]
   },
   "hooks": {

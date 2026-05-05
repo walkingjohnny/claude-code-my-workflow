@@ -48,26 +48,34 @@ Repeat
 
 ---
 
-## Non-Negotiables (Customize These)
+## Non-Negotiables（不可妥协的项目约束）
 
-<!-- Replace with YOUR project's locked-in preferences -->
+**数据过滤（每个脚本必须显式声明，违反视为质量不合格）：**
+```python
+df = df[df['目前所属城市'] == '深圳市']
+df = df[df['复核结果'] != '未见信息']
+```
 
-- [YOUR PATH CONVENTION] (e.g., `here::here()` for R, relative paths for LaTeX)
-- [YOUR SEED CONVENTION] (e.g., `set.seed()` once at top for stochastic code)
-- [YOUR FIGURE STANDARDS] (e.g., white bg, 300 DPI, custom theme)
-- [YOUR COLOR PALETTE] (e.g., institutional colors)
-- [YOUR TOLERANCE THRESHOLDS] (e.g., 1e-6 for point estimates)
+**随机种子：** 所有随机操作统一使用 `RANDOM_SEED = 42`
+
+**图表标准：**
+- 保存 DPI ≥ 300，同时输出 `.png`（报告）和 `.pdf`（论文）
+- 所有图表保存至 `Figures/` 目录
+- 中文标注，必须配置中文字体（思源黑体优先）
+- 去掉上边框和右边框（学术简洁风格）
+
+**配色规范：** 使用色盲友好调色板（`seaborn colorblind` 或项目约定色板），禁止纯红 + 纯绿并列
+
+**路径约定：** 脚本从项目根目录运行，使用相对路径（`源数据/...`、`Figures/...`）
 
 ---
 
 ## Preferences
 
-<!-- Fill in as you discover your working style -->
-
-**Visual:** [How you want figures/plots handled]
-**Reporting:** [Concise bullets? Detailed prose? Details on request?]
-**Session logs:** Always (post-plan, incremental, end-of-session)
-**Replication:** [How strict? Flag near-misses?]
+**汇报风格：** 简洁要点，关键发现加粗；细节按需提供
+**Session logs:** 始终记录（计划后、增量、会话结束）
+**可视化：** 每次分析生成图表后，直接给出简短解读
+**歧义处理：** 遇到分析方法选择时主动提问，不自行假设
 
 ---
 
